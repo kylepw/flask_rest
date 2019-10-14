@@ -1,0 +1,72 @@
+{
+  "name": "もとや食堂　南店",
+  "hp": "https://tabelog.com/osaka/A2701/A270107/27042426/",
+  "menu": "https://tabelog.com/osaka/A2701/A270107/27042426/dtlmenu/photo/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.699331, 135.533577]
+  }
+}
+{
+  "name": "キッチンもとや",
+  "hp": "https://icotto.jp/restaurants/32280",
+  "menu": "https://tabelog.com/osaka/A2701/A270205/27039998/dtlmenu/photo/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.665376, 135.516652]
+  }
+}
+{
+  "name": "福々亭 都島本通店",
+  "hp": "https://tabelog.com/osaka/A2701/A270304/27044676/",
+  "menu": "https://tabelog.com/osaka/A2701/A270304/27044676/dtlmenu/photo/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.708560, 135.531468]
+  }
+}
+{
+  "name": "1969 3号店",
+  "hp": "https://tabelog.com/osaka/A2701/A270101/27026621/",
+  "menu": "https://tabelog.com/osaka/A2701/A270101/27026621/dtlphotolst/5/smp2/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.698811, 135.498954]
+  }
+}
+{
+  "name": "天六うどん",
+  "hp": "https://tabelog.com/osaka/A2701/A270103/27003229/",
+  "menu": "https://tabelog.com/osaka/A2701/A270103/27003229/dtlmenu/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.711206, 135.511158]
+  }
+}
+{
+  "name": "名もなき魚屋",
+  "hp": "https://tabelog.com/osaka/A2701/A270202/27076587/",
+  "menu": "https://tabelog.com/osaka/A2701/A270202/27076587/dtlmenu/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.666344, 135.506632]
+  }
+}
+{
+  "name": "居酒屋 結び",
+  "hp": "https://tabelog.com/osaka/A2701/A270103/27092597/",
+  "menu": "https://tabelog.com/osaka/A2701/A270103/27092597/dtlmenu/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.694955, 135.514555]
+  }
+}
+{
+  "name": "チキンチキン",
+  "hp": "https://tabelog.com/osaka/A2701/A270101/27090308/",
+  "menu": "https://tabelog.com/osaka/A2701/A270101/27090308/dtlmenu/photo/",
+  "location": {
+    "type": "Point",
+    "coordinates": [34.698858, 135.498938]
+  }
+}
