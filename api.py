@@ -1,26 +1,15 @@
 from exceptions import APIException
 from flask import Flask, jsonify, request
 from flask.views import MethodView
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+app.config['MONGO_URI'] = 'mongodb://localhost.com:27017/shops'
+mongo = PyMongo(app)
 
 # Temp database
 shops = [
-    {'id': 0,
-     'name': 'No Name',
-     'hp': 'https://noname',
-     'menu': 'https://noname/menu',
-     'coordinates': [123, 456]},
-     {'id': 1,
-     'name': 'とらやん',
-     'hp': 'https://torayan',
-     'menu': 'https://torayan/menu',
-     'coordinates': [890, 123]},
-     {'id': 2,
-     'name': 'blah',
-     'hp': 'https://blah',
-     'menu': 'https://blah/menu',
-     'coordinates': [678, 923]},
+     
 ]
 
 @app.errorhandler(APIException)
