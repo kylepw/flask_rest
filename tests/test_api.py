@@ -5,7 +5,7 @@
     Test API JSON requests/responses.
 
 """
-from flask_rest import app
+from flask_rest import app, mongo
 import unittest
 
 class TestErrorHandling(unittest.TestCase):
@@ -36,4 +36,15 @@ class TestErrorHandling(unittest.TestCase):
         re = self.app.post(self.root + '/', json=dict(greeting='hey'))
         self.assertEqual(re.status_code, 400)
         self.assertIn('name field required', re.get_json()['errors'][0]['message'])
+
+    def test_valid_patch(self):
+        inserted_id = mongo.db.osaka.insert_one({"name": "hello world"}).inserted_id
+        self.assertIsNotNone(mongo.db.osaka.find_one({"_id": inserted_id}))
+
+        self.assertIsNone(mongo.db.osaka.find_one({"_id": inserted_id, "instrument": {"$exists": True } }))
+        self.app.patch(self.root + '/' + str(inserted_id), json=dict(instrument='drums'))
+        self.assertIsNotNone(mongo.db.osaka.find_one({"_id": inserted_id, "instrument": {"$exists": True } }))
+
+        mongo.db.osaka.delete_one({"_id": inserted_id})
+        self.assertIsNone(mongo.db.osaka.find_one({"_id": inserted_id}))
 

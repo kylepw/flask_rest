@@ -46,11 +46,13 @@ class OneCoinAPI(MethodView):
         mongo.db.osaka.insert_one(data)
         return jsonify({'code': 200, 'message': 'Insertion successful', 'data': data})
 
-    def put(self, shop_id):
-        update = mongo.db.osaka.request.get_json()
-        print(update)
-        #return jsonify(shops[shop_id])
-        pass
+    def patch(self, shop_id):
+        shop = mongo.db.osaka.find_one(shop_id)
+        if not shop:
+            raise APIException('Shop not found with {_id: %s}' % shop_id, 404)
+        update = request.get_json()
+        mongo.db.osaka.update_one({"_id": shop_id}, { "$set": update})
+        return jsonify({'code': 200, 'message': 'Update successful', 'data': update})
 
     def delete(self, shop_id):
         result = mongo.db.osaka.delete_one({"_id": shop_id})
@@ -61,4 +63,4 @@ class OneCoinAPI(MethodView):
 
 one_coin_view = OneCoinAPI.as_view('one_coin_api')
 app.add_url_rule('/api/', defaults={'shop_id': None}, view_func=one_coin_view, methods=['GET', 'POST',])
-app.add_url_rule('/api/<ObjectId:shop_id>', view_func=one_coin_view, methods=['GET', 'PUT', 'DELETE'])
+app.add_url_rule('/api/<ObjectId:shop_id>', view_func=one_coin_view, methods=['GET', 'PATCH', 'DELETE'])
