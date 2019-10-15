@@ -17,11 +17,9 @@ class OneCoinAPI(MethodView):
         if shop_id is None:
             results = []
             for r in mongo.db.osaka.find().limit(20):
-                r['_id'] = str(r['_id'])
                 results.append(r)
             return jsonify(results)
         shop = mongo.db.osaka.find_one(shop_id)
-        shop['_id'] = str(shop['_id'])
         if not shop:
             raise APIException('Shop not found', 404)
         return jsonify(shop)
