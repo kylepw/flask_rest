@@ -2,7 +2,8 @@
     utils.py
     ~~~~~~~~
 
-    Useful classes/functions for other modules.
+    Common classes/functions for other modules.
+
 """
 import json
 from bson import ObjectId

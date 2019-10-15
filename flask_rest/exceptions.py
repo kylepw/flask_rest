@@ -1,5 +1,10 @@
-"""Exception Classes"""
+"""
+    exceptions.py
+    ~~~~~~~~~~~~~
 
+    Custom exceptions.
+
+"""
 class APIException(Exception):
     status_code = 400
 
